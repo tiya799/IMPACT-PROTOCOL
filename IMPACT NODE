@@ -1,0 +1,26 @@
+sudo apt install build-essential
+clang curl git make
+sudo apt install --assume-yes git clang curl libssl-dev protobuf-compiler
+sudo apt install --assume-yes git clang curl libssl-dev llvm libudev-dev make protobuf-compiler
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+source $HOME/.cargo/env
+rustc --version
+rustup default stable
+rustup update
+rustup update nightly
+rustup target add wasm32-unknown-unknown --toolchain nightly
+# rustup show
+
+active toolchain
+----------------
+
+stable-x86_64-unknown-linux-gnu (default)
+rustc 1.62.1 (e092d0b6b 2022-07-16)
+
+# rustup +nightly show
+
+active toolchain
+----------------
+
+nightly-x86_64-unknown-linux-gnu (overridden by +toolchain on the command line)
+rustc 1.65.0-nightly (34a6cae28 2022-08-09)
